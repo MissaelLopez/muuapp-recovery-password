@@ -5,10 +5,18 @@ const App = () => {
   const [name, setName] = useState("");
 
   const getParams = () => {
-    const url = window.location.pathname.slice(1);
-    const decode = JSON.parse(atob(url));
-    setEmail(decode.email);
-    setName(decode.name);
+    const url = window.location.search;
+    const urlParams = new URLSearchParams(url);
+    const encodeData = urlParams.get("data");
+    const decodeData = JSON.parse(
+      atob(
+        encodeData ||
+          "eyJuYW1lIjogIk1pc3NhZWwgTG9wZXoiLCAiZW1haWwiOiAibWlzc2FlbG5qOEBnbWFpbC5jb20ifQ=="
+      )
+    );
+    console.log(decodeData);
+    setEmail(decodeData.email);
+    setName(decodeData.name);
   };
 
   useEffect(() => {
