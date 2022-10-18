@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
 
-function App() {
+const App = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+
+  const getParams = () => {
+    const url = window.location.pathname.slice(1);
+    const decode = JSON.parse(atob(url));
+    setEmail(decode.email);
+    setName(decode.name);
+  };
+
+  useEffect(() => {
+    getParams();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          MuuApp Recovery password
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        Recuperacion de password: {name} - {email}
+      </div>
+      <form>
+        <input type="password" name="password" placeholder="Nuevo password" />
+        <br />
+        <input type="password" name="password" placeholder="Repite password" />
+        <br />
+        <input type="submit" value="Cambiar Password" />
+      </form>
+    </>
   );
-}
+};
 
 export default App;
