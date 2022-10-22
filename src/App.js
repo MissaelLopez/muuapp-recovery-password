@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Header from "./components/Header";
+import Input from "./components/Input";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -8,12 +10,7 @@ const App = () => {
     const url = window.location.search;
     const urlParams = new URLSearchParams(url);
     const encodeData = urlParams.get("data");
-    const decodeData = JSON.parse(
-      atob(
-        encodeData ||
-          "eyJuYW1lIjogIk1pc3NhZWwgTG9wZXoiLCAiZW1haWwiOiAibWlzc2FlbG5qOEBnbWFpbC5jb20ifQ=="
-      )
-    );
+    const decodeData = JSON.parse(atob(encodeData));
     console.log(decodeData);
     setEmail(decodeData.email);
     setName(decodeData.name);
@@ -25,15 +22,14 @@ const App = () => {
 
   return (
     <>
-      <div>
-        Recuperacion de password: {name} - {email}
+      <Header />
+      <div className="text-center text-3xl py-10">
+        <p className="font-bold mb-5">¡Hola {name}!</p>
+        <p>Recupera tu contraseña</p>
       </div>
       <form>
-        <input type="password" name="password" placeholder="Nuevo password" />
-        <br />
-        <input type="password" name="password" placeholder="Repite password" />
-        <br />
-        <input type="submit" value="Cambiar Password" />
+        <Input />
+        <Input />
       </form>
     </>
   );
