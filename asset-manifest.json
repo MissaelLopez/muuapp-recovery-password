@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/muuapp-recovery-password/static/css/main.e6c13ad2.css",
-    "main.js": "/muuapp-recovery-password/static/js/main.d0a1df3a.js",
+    "main.css": "/muuapp-recovery-password/static/css/main.bf77f9b7.css",
+    "main.js": "/muuapp-recovery-password/static/js/main.8d7f8650.js",
+    "static/media/logo.png": "/muuapp-recovery-password/static/media/logo.917e796e981f5a058db3.png",
     "index.html": "/muuapp-recovery-password/index.html",
-    "main.e6c13ad2.css.map": "/muuapp-recovery-password/static/css/main.e6c13ad2.css.map",
-    "main.d0a1df3a.js.map": "/muuapp-recovery-password/static/js/main.d0a1df3a.js.map"
+    "main.bf77f9b7.css.map": "/muuapp-recovery-password/static/css/main.bf77f9b7.css.map",
+    "main.8d7f8650.js.map": "/muuapp-recovery-password/static/js/main.8d7f8650.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.d0a1df3a.js"
+    "static/css/main.bf77f9b7.css",
+    "static/js/main.8d7f8650.js"
   ]
 }
